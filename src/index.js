@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import DataLayer from './contexts/DataLayer';
+import {BrowserRouter} from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DataLayer>
+      <BrowserRouter >
+      <App />
+      </BrowserRouter>
+    </DataLayer>
   </React.StrictMode>,
   document.getElementById('root')
 );

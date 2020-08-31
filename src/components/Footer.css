@@ -1,0 +1,90 @@
+.footer {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    background-color: #282828;
+    padding: 10px;
+}
+
+.footer-left {
+    flex: 0.2;
+    display: flex;
+    align-items: center;
+    color: white;
+    max-width: 300px;
+}
+
+.footer-right {
+    padding-right: 20px;
+    flex: 0.3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.footer-center {
+    flex: 0.5;
+    padding: 0 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* .footer-right * .MuiSlider-root {
+    color: #1ed15e;
+} */
+
+.footer * .MuiSvgIcon-root {
+    color: grey;
+}
+
+.footer-albumLogo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+/* .footer-green {
+    color: #1ed15e;
+} */
+
+.footer-songInfo{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.footer-songInfo > span {
+    display: block;
+}
+
+.footer-songInfo > p {
+    margin-bottom: 5px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+.footer > .MuiGrid-grid-xs-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+    margin-right: 20px;
+}
+
+.footer-icon:hover,
+.footer-green:hover{
+    transition: transform 0.2 ease-in-out;
+    transform: scale(1.2) !important;
+    color: white;
+}
+
