@@ -9,7 +9,7 @@ function Header() {
 
     const { DummyState} = useContext(DataLayerContext);
     const {user} = DummyState;
-    console.log('Header User',user);
+    // console.log('Header User',user);
     return (
         <div className="header">
             <div className="header-left">

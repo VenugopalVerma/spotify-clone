@@ -5,38 +5,35 @@ import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import { DataLayerContext } from "../contexts/DataLayer";
-import './SideBarOption.css';
+import "./SideBarOption.css";
 
 function SideBar({ spotify }) {
   const { DummyState, dispatch } = useContext(DataLayerContext);
   const { userPlaylists } = DummyState;
-  console.log("Inside sidebar");
-  console.log("playlist", userPlaylists);
+  // console.log("user playlist", userPlaylists);
 
   const selectPlaylist = (playlist) => {
-    console.log("selecting Playlist", playlist);
     dispatch({
-        type: "SET_CURRENT_PLAYLIST",
-        payload: {
-            currentPlaylist: playlist
-        }
+      type: "SET_CURRENT_PLAYLIST",
+      payload: {
+        currentPlaylist: playlist,
+      },
     });
 
-    try {
-      console.log('getting selected playlist details');
-        spotify.getPlaylist(playlist.id).then((response) => {
-            console.log('got details of current playlist',response);
-            dispatch({
-                type: 'SET_CURRENT_PLAYLIST_DETAILS',
-                payload: {
-                    details: response
-                }
-            });
-        })
-    } catch (error) {
-        console.log('error getting details for current playlist',error);
-    }
-    
+    spotify
+      .getPlaylist(playlist.id)
+      .then((response) => {
+        // console.log('got details of current playlist',response);
+        dispatch({
+          type: "SET_CURRENT_PLAYLIST_DETAILS",
+          payload: {
+            details: response,
+          },
+        });
+      })
+      .catch((error) =>
+        console.log("error getting details for current playlist", error)
+      );
   };
 
   return (
@@ -49,7 +46,7 @@ function SideBar({ spotify }) {
       <div className="sidebarOption">
         {HomeIcon ? (
           <>
-            <HomeIcon className="sidebarIcon"/>
+            <HomeIcon className="sidebarIcon" />
             <h4>Home</h4>
           </>
         ) : (
@@ -60,7 +57,7 @@ function SideBar({ spotify }) {
       <div className="sidebarOption">
         {SearchIcon ? (
           <>
-            <SearchIcon className="sidebarIcon"/>
+            <SearchIcon className="sidebarIcon" />
             <h4>Search</h4>
           </>
         ) : (
@@ -71,7 +68,7 @@ function SideBar({ spotify }) {
       <div className="sidebarOption">
         {LibraryMusicIcon ? (
           <>
-            <LibraryMusicIcon className="sidebarIcon"/>
+            <LibraryMusicIcon className="sidebarIcon" />
             <h4>Library</h4>
           </>
         ) : (

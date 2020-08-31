@@ -8,7 +8,7 @@ function SongRow({track = "test"}) {
     const {dispatch} = useContext(DataLayerContext);
 
     const handleClick = () => {
-        console.log('Track',track);
+        // console.log('Track',track);
         dispatch({
             type: 'SET_CURRENT_PLAYING_TRACK',
             payload: {
@@ -30,4 +30,4 @@ function SongRow({track = "test"}) {
     )
 }
 
-export default SongRow
+export default SongRow;

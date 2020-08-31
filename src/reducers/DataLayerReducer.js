@@ -7,8 +7,6 @@ const initialState = {
     user: null,
     userPlaylists: [],
     playing: false,
-    item: null,
-    discoverWeekly: null,
     currentTrack: null,
     currentTrackState: null,
     currentPlaylist: null,

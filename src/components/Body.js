@@ -7,8 +7,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import SongRow from "./SongRow";
 
 function Body({ selectedPlaylist, spotify }) {
-    console.log("Inside body");
-  console.log("Selected Playlists", selectedPlaylist);
+//   console.log("Selected Playlists", selectedPlaylist);
 
   const playPlaylist = (selectedPlaylist) => {
     console.log('play playlist clicked');
@@ -20,7 +19,6 @@ function Body({ selectedPlaylist, spotify }) {
   return (
     <div className="body-c">
       
-
     {
         selectedPlaylist ? (
             <>

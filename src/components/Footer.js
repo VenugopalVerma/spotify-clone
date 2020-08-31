@@ -12,12 +12,11 @@ import { DataLayerContext } from '../contexts/DataLayer';
 
 
 function Footer({spotify}) {
-    console.log("Inside footer");
     const {DummyState} = useContext(DataLayerContext);
     const temp = () => {
         console.log('Clicked',DummyState);
         spotify.play().then((res) => {
-            console.log("response",res);
+            console.log("Play clicked",res);
         }).catch((err) => console.error('error on clicked',err));
         // handlePlayPause();
     }

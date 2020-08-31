@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Avatar } from '@material-ui/core';
-
 
 function SideBarOption({playlist,selectPlaylist}) {
     
